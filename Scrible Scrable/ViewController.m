@@ -53,6 +53,7 @@
     [_photoView bringSubviewToFront:_mainImage];
     [_photoView addSubview:_tempDrawImage];
     [_photoView bringSubviewToFront:_tempDrawImage];
+    NSLog(@"Photo view refreshed for real this time");
 }
 
 - (void)didReceiveMemoryWarning
