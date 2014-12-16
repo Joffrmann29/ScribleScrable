@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:0 green:0 blue:0 alpha:1],NSForegroundColorAttributeName, [UIFont fontWithName:@"Chalkduster" size:17.0],NSFontAttributeName, nil]];
+
     return YES;
 }
 

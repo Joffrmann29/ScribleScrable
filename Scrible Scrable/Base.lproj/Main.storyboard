@@ -1,25 +1,220 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5YY-qc-lSo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scrible~Scrable-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFD-ac-BxB">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="e2g-Kf-5df"/>
+                                    <constraint firstAttribute="height" constant="44" id="p3R-zY-F6Y"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Tools" id="JLZ-N3-vB8">
+                                        <connections>
+                                            <action selector="toolsButton:" destination="vXZ-lx-hvc" id="2bO-0l-0jY"/>
+                                            <segue destination="GR2-dl-TsJ" kind="push" identifier="settingsSegue" id="AhR-2k-5bI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nv6-8u-amU"/>
+                                    <barButtonItem systemItem="trash" id="RtK-y8-jmN">
+                                        <connections>
+                                            <action selector="clearButton:" destination="vXZ-lx-hvc" id="dkb-cf-zwb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="sFD-ac-BxB" secondAttribute="bottom" id="Dfy-1m-Zdp"/>
+                            <constraint firstItem="sFD-ac-BxB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Xw1-9x-PyP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sFD-ac-BxB" secondAttribute="trailing" constant="-16" id="sE6-TK-sbr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Scrible~Scrable" id="agi-rP-Dzd">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="camera" id="Zz7-W4-u9n">
+                            <connections>
+                                <action selector="photoButton:" destination="vXZ-lx-hvc" id="dje-Aa-xeF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="KBn-ob-LV1">
+                            <connections>
+                                <action selector="saveButton:" destination="vXZ-lx-hvc" id="zvI-GY-hd3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="clearBarButton" destination="RtK-y8-jmN" id="XwU-0J-we9"/>
+                        <outlet property="photoButton" destination="Zz7-W4-u9n" id="zbF-bZ-mOC"/>
+                        <outlet property="saveButton" destination="KBn-ob-LV1" id="Unu-Bz-4Sx"/>
+                        <outlet property="toolBar" destination="sFD-ac-BxB" id="yal-uX-3gv"/>
+                        <outlet property="toolBarButton" destination="JLZ-N3-vB8" id="26D-yw-vLe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="995" y="280"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="X1v-nL-0dA">
+            <objects>
+                <viewController id="GR2-dl-TsJ" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lx0-Ib-amg"/>
+                        <viewControllerLayoutGuide type="bottom" id="FH4-7f-5B8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SIk-MY-p7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brush" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thR-GT-1BQ">
+                                <rect key="frame" x="30" y="122" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-iT-lc7">
+                                <rect key="frame" x="320" y="122" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-cI-d7A">
+                                <rect key="frame" x="30" y="278" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="IvM-wc-WE3">
+                                <rect key="frame" x="129" y="118" width="175" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="GR2-dl-TsJ" eventType="valueChanged" id="ycx-cS-JLF"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QB8-iQ-Kcp">
+                                <rect key="frame" x="129" y="274" width="175" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="GR2-dl-TsJ" eventType="valueChanged" id="zNQ-eW-PkV"/>
+                                </connections>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGf-a5-3Jp">
+                                <rect key="frame" x="205" y="312" width="97" height="98"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWc-Rm-wZD">
+                                <rect key="frame" x="205" y="156" width="97" height="98"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV2-xz-Isu">
+                                <rect key="frame" x="320" y="278" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RGB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du2-od-3Lh">
+                                <rect key="frame" x="41" y="431" width="46" height="28"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R:XXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh9-Sw-J6W">
+                                <rect key="frame" x="291" y="474" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="G:XXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-0X-J8P">
+                                <rect key="frame" x="291" y="517" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="8pu-Lt-t9r">
+                                <rect key="frame" x="121" y="470" width="150" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="GR2-dl-TsJ" eventType="valueChanged" id="clg-Xx-uNp"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-oL-byL">
+                                <rect key="frame" x="121" y="513" width="150" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="GR2-dl-TsJ" eventType="valueChanged" id="U0X-dc-0VM"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="zF8-mv-NaI">
+                                <rect key="frame" x="121" y="557" width="150" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="GR2-dl-TsJ" eventType="valueChanged" id="gbb-Iu-d8P"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B:XXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1f-2M-93l">
+                                <rect key="frame" x="291" y="561" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.95529197080291961" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kZt-5N-oem">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tbK-w0-lYU">
+                            <connections>
+                                <action selector="closeSettings:" destination="GR2-dl-TsJ" id="Kkn-E0-AV3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="blueControl" destination="zF8-mv-NaI" id="rMy-He-j32"/>
+                        <outlet property="blueLabel" destination="T1f-2M-93l" id="TW1-P3-86w"/>
+                        <outlet property="brushControl" destination="IvM-wc-WE3" id="r4X-03-GY9"/>
+                        <outlet property="brushPreview" destination="EWc-Rm-wZD" id="28C-yp-9gk"/>
+                        <outlet property="brushValueLabel" destination="SyE-iT-lc7" id="DSM-PE-dt3"/>
+                        <outlet property="greenControl" destination="7pc-oL-byL" id="5BJ-9f-hUB"/>
+                        <outlet property="greenLabel" destination="W0C-0X-J8P" id="lwu-kG-hEQ"/>
+                        <outlet property="opacityControl" destination="QB8-iQ-Kcp" id="pgk-Cj-EpR"/>
+                        <outlet property="opacityPreview" destination="kGf-a5-3Jp" id="lXK-Td-udq"/>
+                        <outlet property="opacityValueLabel" destination="iV2-xz-Isu" id="Uac-jv-jIN"/>
+                        <outlet property="redControl" destination="8pu-Lt-t9r" id="Alo-GO-LZD"/>
+                        <outlet property="redLabel" destination="Vh9-Sw-J6W" id="hdY-cK-UzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mkr-Pw-DAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565" y="280"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QVo-zD-FjN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5YY-qc-lSo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KmV-qJ-4h8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="PUP-eq-swJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIe-Lf-J6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424" y="280"/>
         </scene>
     </scenes>
 </document>
