@@ -19,7 +19,7 @@
 @property CGFloat blue;
 @property (nonatomic)CGFloat brush;
 @property (nonatomic)CGFloat opacity;
-@property (weak, nonatomic) IBOutlet UISlider *brushControl;
+@property (weak, nonatomic) IBOutlet UISlider *brushControl; // Controls brush color
 @property (weak, nonatomic) IBOutlet UISlider *opacityControl;
 @property (weak, nonatomic) IBOutlet UIImageView *brushPreview;
 @property (weak, nonatomic) IBOutlet UIImageView *opacityPreview;
