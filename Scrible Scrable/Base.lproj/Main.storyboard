@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="995" y="280"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="X1v-nL-0dA">
             <objects>
                 <viewController id="GR2-dl-TsJ" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -170,7 +170,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.95529197080291961" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kZt-5N-oem">
+                    <navigationItem key="navigationItem" title="Settings" id="kZt-5N-oem">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="tbK-w0-lYU">
                             <connections>
                                 <action selector="closeSettings:" destination="GR2-dl-TsJ" id="Kkn-E0-AV3"/>

@@ -1,7 +1,7 @@
 //
 //  SettingsViewController.h
 //  Scrible Scrable
-//
+// My Favorite Drawing App
 //  Created by Nutech Systems on 12/15/14.
 //  Copyright (c) 2014 Nutech Systems Inc. All rights reserved.
 //
