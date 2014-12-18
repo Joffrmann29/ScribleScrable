@@ -14,11 +14,13 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property CGFloat red;
 @property CGFloat green;
 @property CGFloat blue;
 @property (nonatomic)CGFloat brush;
 @property (nonatomic)CGFloat opacity;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *closeSettings;
 @property (weak, nonatomic) IBOutlet UISlider *brushControl;
 @property (weak, nonatomic) IBOutlet UISlider *opacityControl;
 @property (weak, nonatomic) IBOutlet UIImageView *brushPreview;

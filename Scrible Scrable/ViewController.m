@@ -36,6 +36,7 @@
     _navBarHeight = self.navigationController.navigationBar.bounds.size.height;
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blueColor], NSForegroundColorAttributeName,[UIFont fontWithName:@"Chalkduster" size:17.0], NSFontAttributeName, nil];
     [_saveButton setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    [_toolBarButton setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
     _tempDrawImage = [[UIImageView alloc] initWithFrame:[self imageFrame]];
     _mainImage = [[UIImageView alloc] initWithFrame:[self imageFrame]];
 
@@ -170,6 +171,8 @@
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    NSData *imageData = UIImagePNGRepresentation(image);
+    image = [UIImage imageWithData:imageData];
 
     //Save the Image
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);

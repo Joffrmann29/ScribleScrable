@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC1AD28C1A436E18009F1C37 /* Scribble.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1AD28B1A436E18009F1C37 /* Scribble.png */; };
 		EC59F76B1A3F749700B87226 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC59F76A1A3F749700B87226 /* SettingsViewController.m */; };
 		EC59F76D1A408BD800B87226 /* whitePixel.png in Resources */ = {isa = PBXBuildFile; fileRef = EC59F76C1A408BD800B87226 /* whitePixel.png */; };
 		EC9C87DF1A3A439F0057C092 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C87DE1A3A439F0057C092 /* main.m */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC1AD28B1A436E18009F1C37 /* Scribble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scribble.png; sourceTree = "<group>"; };
 		EC59F7691A3F749700B87226 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		EC59F76A1A3F749700B87226 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		EC59F76C1A408BD800B87226 /* whitePixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whitePixel.png; path = ../../whitePixel.png; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		EC9C87DC1A3A439F0057C092 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC1AD28B1A436E18009F1C37 /* Scribble.png */,
 				EC59F76C1A408BD800B87226 /* whitePixel.png */,
 				EC9C87DD1A3A439F0057C092 /* Info.plist */,
 				EC9C87DE1A3A439F0057C092 /* main.m */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC59F76D1A408BD800B87226 /* whitePixel.png in Resources */,
+				EC1AD28C1A436E18009F1C37 /* Scribble.png in Resources */,
 				EC9C87E81A3A439F0057C092 /* Main.storyboard in Resources */,
 				EC9C87ED1A3A439F0057C092 /* LaunchScreen.xib in Resources */,
 				EC9C87EA1A3A439F0057C092 /* Images.xcassets in Resources */,

@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blueColor], NSForegroundColorAttributeName,[UIFont fontWithName:@"Chalkduster" size:17.0], NSFontAttributeName, nil];
+    [_closeSettings setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    [_cancelButton setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
     
     self.opacityControl.value = _opacity;
     self.brushControl.value = _brush;
@@ -89,15 +92,6 @@
     self.brushPreview.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    UIGraphicsBeginImageContext(self.opacityPreview.frame.size);
-    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 20.0);
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), self.red, self.green, self.blue, self.opacity);
-    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), 45, 45);
-    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), 45, 45);
-    CGContextStrokePath(UIGraphicsGetCurrentContext());
-    self.opacityPreview.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
 }
 
 #pragma mark - SettingsViewControllerDelegate methods
@@ -109,5 +103,10 @@
     _opacity = self.opacityControl.value;
     [self.delegate willCloseSettingsWithBrush:_brush andOpacity:_opacity andRed:_red andGreen:_green andBlue:_blue];
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)cancelButton:(UIBarButtonItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 @end
